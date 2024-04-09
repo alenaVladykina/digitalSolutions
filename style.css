@@ -7,11 +7,14 @@ body {
     background-color: #D4D4D4;
     font-family: "Inter", sans-serif, Arial;
     padding: 70px;
-    display: flex;
-    justify-content: center;
     font-weight: 400;
 }
 
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 .decoration {
     position: fixed;
@@ -66,7 +69,7 @@ body {
 }
 
 
-.title {
+.card__title {
     margin: 0;
     font-size: 32px;
     line-height: 38px;
@@ -76,7 +79,7 @@ body {
     text-overflow: ellipsis;
 }
 
-.text {
+.card__text {
     font-size: 12px;
     line-height: 14px;
 }
