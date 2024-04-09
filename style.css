@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #D4D4D4;
+    font-family: "Inter", sans-serif, Arial;
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.decoration {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    max-width: 100%;
+    width: 934px;
+    border-radius: 1000px;
+    transform: translate(-50%, -50%) rotateZ(30deg);
+}
+
+.decoration_bg {
+    height: 0;
+    width: 100%;
+    border-radius: 1000px;
+    background-color: #7075F1;
+    padding-bottom: 32.11%; /*  300px / 934px */
+    z-index: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    --elems: 4;
+    --gap: 60px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: inherit;
+    max-width: calc(100% * 1 / var(--elems) - var(--gap));
+    padding: 25px;
+    border-radius: 25px;
+    margin-bottom: 60px;
+    box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.25);
+    z-index: 3;
+    backdrop-filter: blur(46px);
+    -webkit-backdrop-filter: blur(46px);
+    transition: background-color ease 1s, box-shadow ease 1s;
+}
+
+.card:hover {
+    background-color: #FFFFFF;
+}
+
+.card_active {
+    box-shadow: 0 0 35px 0 #FF2F54;
+}
+
+
+.title {
+    margin: 0;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+    .container {
+        --gap: 40px;
+        --elems: 3;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+        padding: 40px;
+    }
+
+    .container {
+        --gap: 20px;
+        --elems: 3;
+    }
+}
+
+@media (min-width: 768px)  and (max-width: 991px) {
+    body {
+        padding: 40px;
+    }
+
+    .container {
+        --gap: 20px;
+        --elems: 2;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        padding: 40px 70px 40px 70px;
+    }
+
+    .decoration {
+        display: none;
+    }
+
+    .card {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 30px;
+    }
+
+    .card {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .decoration {
+        display: none;
+    }
+}
